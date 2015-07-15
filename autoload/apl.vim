@@ -37,7 +37,7 @@ fu apl#help()
   en
   let c = substitute(getline('.')[col('.')-1:], '\v^(.).*$', '\1', '') " char at cursor
   if has_key(s:u, c)
-    exe '!gnome-www-browser '.shellescape(s:u['prefix'].s:u[c].s:u['suffix'], '%')
+    exe '!xdg-open '.shellescape(s:u['prefix'].s:u[c].s:u['suffix'], '%')
   el
     echoh errormsg | ec 'no help available for '.c | echoh none
   en
